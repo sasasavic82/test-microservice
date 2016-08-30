@@ -2,7 +2,13 @@
     "container": {
         "docker": {
             "image": "sash/test-microservice:latest",
-            "network": "BRIDGE"
+            "network": "BRIDGE",
+            "portMappings": [
+                {
+                    "containerPort": 8088,
+                    "protocol": "tcp"
+                }
+            ]
         },
         "type": "DOCKER"
     },
@@ -27,15 +33,5 @@
     "mem": 128,
     "upgradeStrategy": {
         "minimumHealthCapacity": 0
-    },
-    "portDefinitions": [
-    {
-        "protocol": "tcp",
-        "port": 10200
-    },
-    {
-        "protocol": "tcp",
-        "port": 10201
     }
-  ]    
 }
