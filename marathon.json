@@ -2,7 +2,7 @@
     "container": {
         "docker": {
             "image": "sash/test-microservice:latest",
-            "network": "BRIDGE",
+            "network": "HOST",
             "portMappings": [
                 {
                     "containerPort": 8088,
