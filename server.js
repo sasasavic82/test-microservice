@@ -36,6 +36,7 @@ function removeConnection(socket) {
 }
 
 function addLocation(lon, lat) {
+  
   if(lon && lat) {
     var loc = { lon: lon, lat: lat }
     locations.push(loc);
