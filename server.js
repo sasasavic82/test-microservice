@@ -11,7 +11,7 @@ var connections = [], locations = [];
 server.listen(PORT);
 
 app.get('/', function (req, res) {
-  res.send('Hey !');
+  res.send('Hey!');
 });
 
 app.post('/location', function (req, res) {
