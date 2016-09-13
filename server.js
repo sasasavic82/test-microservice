@@ -11,7 +11,7 @@ var connections = [], locations = [];
 server.listen(PORT);
 
 app.get('/', function (req, res) {
-  res.send('Hey!');
+  res.send('Hey !');
 });
 
 app.post('/location', function (req, res) {
@@ -36,7 +36,7 @@ function removeConnection(socket) {
 }
 
 function addLocation(lon, lat) {
-  
+
   if(lon && lat) {
     var loc = { lon: lon, lat: lat }
     locations.push(loc);
