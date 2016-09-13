@@ -17,7 +17,7 @@ server.listen(PORT);
 console.log('Listening on ' + PORT);
 
 app.get('/', function (req, res) {
-  res.send('Hello Sash is here from Microservice on Mesosphere!');
+  res.send('Hello from L26 242 Exhibition St! Woohoo!');
 });
 
 app.get('/location', function (req, res) {
