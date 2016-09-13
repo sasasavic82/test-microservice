@@ -2,11 +2,15 @@
 
 var app = require('express')(),
     server = require('http').Server(app),
-    io = require('socket.io')(server);
+    io = require('socket.io')(server),
+    bodyParser = require('body-parser');
 
 const PORT = 8088;
 
 var connections = [], locations = [];
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:  false}));
 
 server.listen(PORT);
 
@@ -17,6 +21,9 @@ app.get('/', function (req, res) {
 });
 
 app.post('/location', function (req, res) {
+  
+  console.log(req.body);
+
   var loc = {
     lon: req.body.lon,
     lat: req.body.lat
