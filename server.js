@@ -10,6 +10,8 @@ var connections = [], locations = [];
 
 server.listen(PORT);
 
+console.log('Listening on ' + PORT);
+
 app.get('/', function (req, res) {
   res.send('Hello Sash is here from Microservice on Mesosphere!');
 });
