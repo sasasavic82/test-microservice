@@ -11,11 +11,18 @@ var connections = [], locations = [];
 server.listen(PORT);
 
 app.get('/', function (req, res) {
-  res.send('Hey!');
+  res.send('Hello Sash is here from Microservice on Mesosphere!');
 });
 
 app.post('/location', function (req, res) {
-  addLocation(req.body.lon, req.body.lat);
+  var loc = {
+    lon: req.body.lon,
+    lat: req.body.lat
+  }
+  
+  addLocation(loc);
+
+  res.json(loc);
 });
 
 io.on('connection', function (socket) {
@@ -30,20 +37,22 @@ io.on('connection', function (socket) {
 });
 
 function removeConnection(socket) {
+
   var idx = connections.indexOf(socket);
   if(idx > -1)
     connections.splice(idx, 1);
+
 }
 
-function addLocation(lon, lat) {
+function addLocation(loc) {
 
-  if(lon && lat) {
-    var loc = { lon: lon, lat: lat }
+  if(loc.lon && loc.lat) {
+
     locations.push(loc);
 
     connections.forEach(function(socket) {
       socket.emit('location.update', loc)
-    })
+    });
 
   }
 }
