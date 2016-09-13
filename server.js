@@ -20,6 +20,10 @@ app.get('/', function (req, res) {
   res.send('Hello Sash is here from Microservice on Mesosphere!');
 });
 
+app.get('/location', function (req, res) {
+  res.json(locations);  
+});
+
 app.post('/location', function (req, res) {
   
   console.log(req.body);
