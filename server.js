@@ -17,7 +17,7 @@ server.listen(PORT);
 console.log('Listening on ' + PORT);
 
 app.get('/', function (req, res) {
-  res.send('Hello from L26 242 Exhibition St! Woohoo!');
+  res.send('Hello from L26 242 Exhibition St! Woohoooooooooooooooooooooooo!');
 });
 
 app.get('/location', function (req, res) {
