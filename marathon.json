@@ -7,7 +7,8 @@
                 {
                     "hostPort": "7818",
                     "containerPort": 8088,
-                    "protocol": "tcp"
+                    "protocol": "tcp",
+                    "servicePort": "10010"
                 }
             ]
         },
@@ -34,6 +35,5 @@
     "mem": 128,
     "upgradeStrategy": {
         "minimumHealthCapacity": 0
-    },
-    "acceptedResourceRoles": ["slave_public"]
+    }
 }
